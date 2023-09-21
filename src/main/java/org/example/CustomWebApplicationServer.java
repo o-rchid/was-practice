@@ -1,5 +1,8 @@
 package org.example;
 
+import org.example.arithmetic_calculate.HttpRequest;
+import org.example.arithmetic_calculate.domain.Calculator;
+import org.example.arithmetic_calculate.domain.PositiveNumber;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -36,9 +39,16 @@ public class CustomWebApplicationServer {
                     BufferedReader br = new BufferedReader(new InputStreamReader(in, StandardCharsets.UTF_8));
                     DataOutputStream dos = new DataOutputStream(out);
 
-                    String line;
-                    while ((line = br.readLine()) != "") {
-                        System.out.println(line);
+                    HttpRequest httpRequest = new HttpRequest(br);
+
+                    if (httpRequest.isGetRequest() && httpRequest.matchPath("/calculate")) {
+                        QueryStrings queryString = httpRequest.getQueryStrings();
+
+                        int operand1 = Integer.parseInt(queryString.getValue("operand1"));
+                        String operator = queryString.getValue("operator");
+                        int operand2 = Integer.parseInt(queryString.getValue("operand2"));
+
+                        int result = Calculator.calculate(new PositiveNumber(operand1), operator, new PositiveNumber(operand2));
                     }
                 }
             }
