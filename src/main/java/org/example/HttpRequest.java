@@ -1,4 +1,4 @@
-package org.example.arithmetic_calculate;
+package org.example;
 
 import org.example.QueryString;
 import org.example.QueryStrings;
