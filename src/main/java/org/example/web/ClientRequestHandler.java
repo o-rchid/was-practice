@@ -1,7 +1,7 @@
-package org.example;
+package org.example.web;
 
-import org.example.arithmetic_calculate.domain.Calculator;
-import org.example.arithmetic_calculate.domain.PositiveNumber;
+import org.example.calculate.domain.Calculator;
+import org.example.calculate.domain.PositiveNumber;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

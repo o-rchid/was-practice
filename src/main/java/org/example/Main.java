@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         //new CustomWebApplicationServer(8080).start();
 
-        String webappDirLocation = "webapp/";
+        String webappDirLocation = "webapps/";
         Tomcat tomcat = new Tomcat();
         tomcat.setPort(8080);
 

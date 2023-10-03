@@ -1,4 +1,4 @@
-package org.example.arithmetic_calculate.domain;
+package org.example.calculate.domain;
 
 import java.util.Arrays;
 

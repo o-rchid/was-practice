@@ -1,14 +1,11 @@
-package org.example;
+package org.example.web;
 
-import org.example.arithmetic_calculate.domain.Calculator;
-import org.example.arithmetic_calculate.domain.PositiveNumber;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.nio.charset.StandardCharsets;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 

@@ -1,6 +1,6 @@
-package org.example.arithmetic_calculate.domain;
+package org.example.calculate.domain;
 
-import org.example.arithmetic_calculate.tobe.*;
+import org.example.calculate.tobe.*;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
-package org.example.arithmetic_calculate.tobe;
+package org.example.calculate.tobe;
 
-import org.example.arithmetic_calculate.domain.PositiveNumber;
+import org.example.calculate.domain.PositiveNumber;
 
 public class AdditionOperator implements NewArithmeticOperator {
 

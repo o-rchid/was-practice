@@ -1,8 +1,4 @@
-package org.example;
-
-import org.example.QueryString;
-import org.example.QueryStrings;
-import org.example.RequestLine;
+package org.example.web;
 
 import java.io.BufferedReader;
 import java.io.IOException;
