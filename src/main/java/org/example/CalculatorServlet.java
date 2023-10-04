@@ -7,23 +7,23 @@ import org.slf4j.LoggerFactory;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
 @WebServlet("/calculate")
-public class CalculatorServlet implements Servlet {
+public class CalculatorServlet extends HttpServlet {
 
     private static final Logger log = LoggerFactory.getLogger(CalculatorServlet.class);
-    private ServletConfig servletConfig;
+
+    /*GenericServlet을 extends 한 경우
+    @Override
+    public void service(ServletRequest request, ServletResponse response) throws IOException { }*/
 
     @Override
-    public void init(ServletConfig config) throws ServletException {
-        log.info("init");
-        this.servletConfig = config;
-    }
-
-    @Override
-    public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         log.info("service");
         int operand1 = Integer.parseInt(request.getParameter("operand1"));
         String operator = request.getParameter("operator");
@@ -35,18 +35,4 @@ public class CalculatorServlet implements Servlet {
         writer.println(result);
     }
 
-    @Override
-    public void destroy() {
-        //resource release
-    }
-
-    @Override
-    public ServletConfig getServletConfig() {
-        return this.servletConfig;
-    }
-
-    @Override
-    public String getServletInfo() {
-        return null;
-    }
 }
